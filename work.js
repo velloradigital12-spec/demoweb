@@ -4,34 +4,48 @@
 
 (function() {
 
+  // Adaptive loading flags
+  const SAVE_DATA = (navigator.connection && navigator.connection.saveData) || false;
+  const IS_SLOW = (navigator.connection && /(2g|slow-2g)/i.test(navigator.connection.effectiveType)) || false;
+
   /* ────── LAZY LOAD BACKGROUND IMAGES ──────
-     Loads each [data-bg] only when it enters viewport (rootMargin gives headroom).
-     Preloads in a hidden Image first so paint is smooth, no flicker. */
+     Loads each [data-bg] only when it enters viewport.
+     Picks smaller width variant on mobile/slow networks. */
   function initLazyBg() {
     const targets = document.querySelectorAll('[data-bg]');
     if (!targets.length) return;
 
+    const VW = window.innerWidth;
+    function pickSrc(url) {
+      if (!url) return url;
+      if (VW <= 480 && (SAVE_DATA || IS_SLOW)) return url.replace(/w=\d+/, 'w=300');
+      if (VW <= 480) return url.replace(/w=\d+/, 'w=400');
+      if (VW <= 900) return url.replace(/w=\d+/, 'w=600');
+      return url;
+    }
+
     const load = (el) => {
-      const src = el.dataset.bg;
+      const src = pickSrc(el.dataset.bg);
       if (!src || el.classList.contains('bg-loaded')) return;
       const img = new Image();
+      img.decoding = 'async';
       img.onload = () => {
         el.style.backgroundImage = `url("${src}")`;
         el.classList.add('bg-loaded');
         el.removeAttribute('data-bg');
       };
       img.onerror = () => {
-        // graceful: just mark loaded so skeleton stops
         el.classList.add('bg-loaded');
       };
       img.src = src;
     };
 
     if (!('IntersectionObserver' in window)) {
-      // Fallback: load everything immediately
       targets.forEach(load);
       return;
     }
+
+    const rootMargin = (SAVE_DATA || IS_SLOW) ? '50px 0px' : '400px 0px';
 
     const io = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -40,15 +54,13 @@
           io.unobserve(entry.target);
         }
       });
-    }, {
-      rootMargin: '300px 0px',  // start loading 300px before entering view
-      threshold: 0.01
-    });
+    }, { rootMargin, threshold: 0.01 });
 
     targets.forEach((el) => io.observe(el));
 
-    // Eagerly load the first 6 images (above fold) right away — no waiting
-    Array.from(targets).slice(0, 6).forEach(load);
+    // Eagerly load the first images (above fold)
+    const eagerCount = (SAVE_DATA || IS_SLOW) ? 2 : 6;
+    Array.from(targets).slice(0, eagerCount).forEach(load);
   }
 
   initLazyBg();

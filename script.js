@@ -5,16 +5,35 @@
 gsap.registerPlugin(ScrollTrigger);
 
 const IS_TOUCH = window.matchMedia('(pointer: coarse)').matches || window.matchMedia('(max-width: 1024px)').matches;
+const REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const SAVE_DATA = (navigator.connection && navigator.connection.saveData) || false;
+const IS_SLOW = (navigator.connection && /(2g|slow-2g)/i.test(navigator.connection.effectiveType)) || false;
 
 /* ────── LAZY-LOAD BACKGROUND IMAGES ────── */
 function initLazyBg() {
   const targets = document.querySelectorAll('[data-bg]');
   if (!targets.length) return;
 
+  // Pick smaller width param when on mobile/slow network — saves 50-70% data
+  const VW = window.innerWidth;
+  function pickSrc(url) {
+    if (!url) return url;
+    // Already has w= param? Resize it.
+    if (VW <= 480 && (SAVE_DATA || IS_SLOW)) {
+      return url.replace(/w=\d+/, 'w=300');
+    } else if (VW <= 480) {
+      return url.replace(/w=\d+/, 'w=400');
+    } else if (VW <= 900) {
+      return url.replace(/w=\d+/, 'w=600');
+    }
+    return url; // desktop: use original
+  }
+
   const load = (el) => {
-    const src = el.dataset.bg;
+    const src = pickSrc(el.dataset.bg);
     if (!src || el.classList.contains('bg-loaded')) return;
     const img = new Image();
+    img.decoding = 'async';
     img.onload = () => {
       el.style.backgroundImage = `url("${src}")`;
       el.classList.add('bg-loaded');
@@ -29,14 +48,18 @@ function initLazyBg() {
     return;
   }
 
+  const rootMargin = (SAVE_DATA || IS_SLOW) ? '50px 0px' : '400px 0px';
+
   const io = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
       if (e.isIntersecting) { load(e.target); io.unobserve(e.target); }
     });
-  }, { rootMargin: '300px 0px', threshold: 0.01 });
+  }, { rootMargin, threshold: 0.01 });
 
   targets.forEach((el) => io.observe(el));
-  Array.from(targets).slice(0, 3).forEach(load);
+
+  const eagerCount = (SAVE_DATA || IS_SLOW) ? 1 : 3;
+  Array.from(targets).slice(0, eagerCount).forEach(load);
 }
 
 /* ────── LOADER ────── */
@@ -339,6 +362,11 @@ function initKineticLogo() {
     tl.to(word, { y: 0, opacity: 1, duration: 0.5, ease: 'expo.out' }, '-=0.55');
   }
 
+  // Skip cycle on reduced-motion or save-data / slow connections (battery/perf)
+  if (REDUCED_MOTION || SAVE_DATA || IS_SLOW) {
+    return;
+  }
+
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
@@ -441,7 +469,7 @@ function initParallax() {
 }
 
 /* ────── BOOT ────── */
-window.addEventListener('DOMContentLoaded', () => {
+function bootApp() {
   gsap.set('.mask .word', { y: '110%' });
 
   initLazyBg();
@@ -457,6 +485,14 @@ window.addEventListener('DOMContentLoaded', () => {
   if (document.fonts && document.fonts.ready) {
     document.fonts.ready.then(() => ScrollTrigger.refresh());
   }
-});
+}
+
+// With defer, the script runs after the DOM is parsed.
+// DOMContentLoaded may have already fired by the time this executes.
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', bootApp);
+} else {
+  bootApp();
+}
 
 window.addEventListener('load', () => ScrollTrigger.refresh());

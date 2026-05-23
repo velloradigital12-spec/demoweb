@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PixelNest Studio — Ad films, CGI advertising, 3D worlds, content production." />
+  <title>Studio — PixelNest Ad Branding</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+  <link rel="dns-prefetch" href="https://images.unsplash.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Instrument+Serif:ital@0;1&family=Manrope:wght@300..700&family=JetBrains+Mono:wght@300..500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="studio.css" />
+</head>
+<body class="page-studio">
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <div class="cursor-inner"><span id="cursorText"></span></div>
+  </div>
+
+  <!-- LOADER -->
+  <section class="loader" id="loader" aria-hidden="true">
+    <div class="loader-curtain loader-curtain-top"></div>
+    <div class="loader-curtain loader-curtain-bot"></div>
+    <div class="loader-content">
+      <div class="loader-counter">
+        <span class="loader-num" id="loaderNum">0</span>
+        <span class="loader-100">/100</span>
+      </div>
+      <div class="loader-bar"><div class="loader-bar-fill" id="loaderBarFill"></div></div>
+    </div>
+    <div class="loader-logo-final" id="loaderLogoFinal">
+      <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="14" cy="32" r="6" fill="#2547ff"/>
+        <rect x="26" y="14" width="12" height="12" fill="#ffffff"/>
+        <polygon points="46,46 58,46 52,34" fill="#d9ff00"/>
+        <circle cx="42" cy="20" r="3" fill="#ff4530"/>
+      </svg>
+      <span><em>Pixel</em>Nest</span>
+    </div>
+  </section>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" data-magnetic data-cursor="link">
+        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="14" cy="32" r="6" fill="#2547ff"/>
+          <rect x="26" y="14" width="12" height="12" fill="currentColor"/>
+          <polygon points="46,46 58,46 52,34" fill="#d9ff00"/>
+          <circle cx="42" cy="20" r="3" fill="#ff4530"/>
+        </svg>
+        <span><em>Pixel</em>Nest</span>
+      </a>
+
+      <nav class="nav-menu" aria-label="Primary">
+        <a href="work.html" data-magnetic><span>Work</span></a>
+        <a href="studio.html" class="is-active" data-magnetic><span>Studio</span></a>
+        <a href="index.html#awards" data-magnetic><span>Awards</span></a>
+        <a href="index.html#contact" data-magnetic><span>Contact</span></a>
+      </nav>
+
+      <a href="index.html#contact" class="nav-cta" data-magnetic data-cursor="link">
+        <span class="nav-cta-bg"></span>
+        <span class="nav-cta-label"><span>Contact Us</span><i>↗</i></span>
+      </a>
+
+      <button class="nav-burger" id="navBurger" aria-label="Menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-links">
+      <a href="work.html">Work</a>
+      <a href="studio.html">Studio</a>
+      <a href="index.html#awards">Awards</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+    <div class="mobile-menu-foot">
+      <span>+91 95749 59292</span>
+      <span>Ahmedabad — IND</span>
+    </div>
+  </div>
+
+  <main id="top">
+
+    <!-- ░░░ HERO ░░░ -->
+    <section class="st-hero">
+      <div class="st-hero-grid">
+        <div class="st-hero-left">
+          <h1 class="st-hero-title">
+            <span class="mask"><span class="word">Making</span></span>
+            <span class="mask"><span class="word">Advertising</span></span>
+            <span class="mask"><span class="word"><em>Great</em> again!</span></span>
+          </h1>
+        </div>
+
+        <!-- Floating brand-shapes (same as home kinetic, smaller) -->
+        <div class="st-hero-shapes">
+          <span class="sh sh-square"></span>
+          <span class="sh sh-circle"></span>
+          <span class="sh sh-ring"></span>
+          <span class="sh sh-triangle"></span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ░░░ AD FILMS — featured hero ░░░ -->
+    <section class="st-ad-films">
+      <div class="st-section-head">
+        <h2 class="st-section-title">Ad Films</h2>
+        <span class="st-badge">
+          <i class="st-badge-mark"></i>
+          PixelNest <em>Studios</em>
+        </span>
+      </div>
+
+      <a class="film-hero" href="#" data-cursor="play">
+        <div class="film-hero-img" data-bg="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=1400&q=75&fm=webp&auto=format"></div>
+        <div class="film-hero-overlay"></div>
+        <div class="film-hero-content">
+          <div class="film-hero-brand">
+            <span class="film-brand-mark"></span>
+            SPACE<sup>™</sup>
+            <em>EMPOWERING LIFE</em>
+          </div>
+          <h3 class="film-hero-title">
+            <span>ROCKET SCIENCE?</span>
+            <span class="film-hero-title-accent">ASAAN HAI!</span>
+          </h3>
+          <button class="film-play" aria-label="Play">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+          </button>
+        </div>
+      </a>
+
+      <!-- films grid -->
+      <div class="film-grid">
+        <a class="film-card" href="#" data-cursor="play">
+          <div class="film-card-img" data-bg="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=900&q=75&fm=webp&auto=format"></div>
+          <span class="film-card-tag">SPACE</span>
+          <button class="film-play film-play-sm" aria-label="Play">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+          </button>
+        </a>
+        <a class="film-card" href="#" data-cursor="play">
+          <div class="film-card-img" data-bg="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=900&q=75&fm=webp&auto=format"></div>
+          <button class="film-play film-play-sm" aria-label="Play">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+          </button>
+        </a>
+        <a class="film-card" href="#" data-cursor="play">
+          <div class="film-card-img" data-bg="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=900&q=75&fm=webp&auto=format"></div>
+          <span class="film-card-caption">कनेडा वालो को ये…<br/>घर वालो की</span>
+          <button class="film-play film-play-sm" aria-label="Play">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+          </button>
+        </a>
+        <a class="film-card" href="#" data-cursor="play">
+          <div class="film-card-img" data-bg="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=900&q=75&fm=webp&auto=format"></div>
+          <button class="film-play film-play-sm" aria-label="Play">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+          </button>
+        </a>
+      </div>
+    </section>
+
+
+    <!-- ░░░ FLAVOURFUL FRAMES — interactive collage ░░░ -->
+    <section class="st-frames">
+      <h2 class="st-section-title st-section-title-center">Flavourful Frames</h2>
+
+      <div class="frames-collage">
+        <div class="ff-tile" data-bg="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&q=75&fm=webp&auto=format"></div>
+        <div class="ff-tile" data-bg="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&q=75&fm=webp&auto=format"></div>
+        <div class="ff-tile" data-bg="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=400&q=75&fm=webp&auto=format"></div>
+        <div class="ff-tile" data-bg="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&q=75&fm=webp&auto=format"></div>
+        <div class="ff-tile" data-bg="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=400&q=75&fm=webp&auto=format"></div>
+        <div class="ff-tile" data-bg="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=400&q=75&fm=webp&auto=format"></div>
+        <div class="ff-tile" data-bg="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&q=75&fm=webp&auto=format"></div>
+        <div class="ff-tile" data-bg="https://images.unsplash.com/photo-1567620832903-9fc6debc209f?w=400&q=75&fm=webp&auto=format"></div>
+        <div class="ff-tile" data-bg="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=400&q=75&fm=webp&auto=format"></div>
+        <div class="ff-tile" data-bg="https://images.unsplash.com/photo-1432139509613-5c4255815697?w=400&q=75&fm=webp&auto=format"></div>
+        <div class="ff-tile" data-bg="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&q=75&fm=webp&auto=format"></div>
+        <div class="ff-tile" data-bg="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=400&q=75&fm=webp&auto=format"></div>
+        <div class="ff-tile" data-bg="https://images.unsplash.com/photo-1565299543923-37dd37887442?w=400&q=75&fm=webp&auto=format"></div>
+        <div class="ff-tile" data-bg="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=400&q=75&fm=webp&auto=format"></div>
+        <div class="ff-tile" data-bg="https://images.unsplash.com/photo-1559054663-e8d23213f55c?w=400&q=75&fm=webp&auto=format"></div>
+
+        <!-- center click target -->
+        <button class="ff-click" aria-label="Explore">
+          <span class="ff-bracket ff-bracket-tl"></span>
+          <span class="ff-bracket ff-bracket-tr"></span>
+          <span class="ff-bracket ff-bracket-bl"></span>
+          <span class="ff-bracket ff-bracket-br"></span>
+          <span class="ff-circle">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>
+          </span>
+          <span class="ff-cursor">
+            <svg viewBox="0 0 24 24"><path d="M3 2l7 17 2.5-7.5L20 9z" fill="currentColor"/></svg>
+            <em>Click Here</em>
+          </span>
+        </button>
+      </div>
+    </section>
+
+
+    <!-- ░░░ STEP INTO 3D WORLD — THE WATCH ░░░ -->
+    <section class="st-3d">
+      <div class="st-3d-head">
+        <h2 class="st-3d-title">
+          Step into our<br/>
+          <span class="st-3d-title-em">3D <span class="st-3d-red">World</span></span>
+        </h2>
+      </div>
+
+      <div class="st-3d-stage">
+
+        <!-- THE WATCH — fully hand-drawn animated SVG -->
+        <div class="watch" id="watch" data-parallax="-12">
+          <svg viewBox="0 0 360 360" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <!-- Watch case gradient (rose gold) -->
+              <linearGradient id="caseGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#f4c79f"/>
+                <stop offset="40%" stop-color="#c98a5e"/>
+                <stop offset="70%" stop-color="#a26343"/>
+                <stop offset="100%" stop-color="#7a4729"/>
+              </linearGradient>
+              <linearGradient id="caseGradInner" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#5d3522"/>
+                <stop offset="100%" stop-color="#3b2113"/>
+              </linearGradient>
+              <radialGradient id="dialGrad" cx="50%" cy="40%" r="60%">
+                <stop offset="0%" stop-color="#2a1a14"/>
+                <stop offset="100%" stop-color="#0d0805"/>
+              </radialGradient>
+              <linearGradient id="strapGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#8a4a2b"/>
+                <stop offset="100%" stop-color="#5a2e15"/>
+              </linearGradient>
+              <linearGradient id="gearGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#d4a574"/>
+                <stop offset="100%" stop-color="#8a5a3a"/>
+              </linearGradient>
+              <linearGradient id="crownGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#e0a878"/>
+                <stop offset="100%" stop-color="#8a5530"/>
+              </linearGradient>
+              <radialGradient id="reflGrad" cx="35%" cy="25%" r="40%">
+                <stop offset="0%" stop-color="rgba(255,255,255,0.5)"/>
+                <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+              </radialGradient>
+            </defs>
+
+            <!-- STRAP — upper -->
+            <g class="watch-strap-top">
+              <path d="M 140 60 L 145 30 Q 145 18 165 18 L 195 18 Q 215 18 215 30 L 220 60 Z" fill="url(#strapGrad)"/>
+              <path d="M 148 50 L 152 35 Q 152 28 165 28 L 195 28 Q 208 28 208 35 L 212 50 Z" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+            </g>
+            <!-- STRAP — lower -->
+            <g class="watch-strap-bot">
+              <path d="M 140 300 L 145 330 Q 145 342 165 342 L 195 342 Q 215 342 215 330 L 220 300 Z" fill="url(#strapGrad)"/>
+              <path d="M 148 310 L 152 325 Q 152 332 165 332 L 195 332 Q 208 332 208 325 L 212 310 Z" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+            </g>
+
+            <!-- Crown (right side button) -->
+            <g class="watch-crown">
+              <rect x="295" y="170" width="14" height="20" rx="2" fill="url(#crownGrad)"/>
+              <rect x="297" y="172" width="10" height="16" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="0.5"/>
+              <rect x="299" y="174" width="6" height="12" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="0.5"/>
+            </g>
+
+            <!-- Outer case ring (rose gold) -->
+            <circle cx="180" cy="180" r="120" fill="url(#caseGrad)"/>
+            <circle cx="180" cy="180" r="120" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
+
+            <!-- Inner case bevel -->
+            <circle cx="180" cy="180" r="108" fill="url(#caseGradInner)"/>
+            <circle cx="180" cy="180" r="100" fill="none" stroke="rgba(212,165,116,0.3)" stroke-width="1"/>
+
+            <!-- Dial face -->
+            <circle cx="180" cy="180" r="96" fill="url(#dialGrad)"/>
+
+            <!-- Hour markers (12 dots around dial) -->
+            <g class="watch-hours">
+              <circle cx="180" cy="92"  r="3" fill="#d4a574"/>
+              <circle cx="220" cy="100" r="2" fill="#d4a574"/>
+              <circle cx="252" cy="124" r="2" fill="#d4a574"/>
+              <circle cx="268" cy="160" r="2" fill="#d4a574"/>
+              <circle cx="268" cy="200" r="2" fill="#d4a574"/>
+              <circle cx="252" cy="236" r="2" fill="#d4a574"/>
+              <circle cx="220" cy="260" r="2" fill="#d4a574"/>
+              <circle cx="180" cy="268" r="3" fill="#d4a574"/>
+              <circle cx="140" cy="260" r="2" fill="#d4a574"/>
+              <circle cx="108" cy="236" r="2" fill="#d4a574"/>
+              <circle cx="92"  cy="200" r="2" fill="#d4a574"/>
+              <circle cx="92"  cy="160" r="2" fill="#d4a574"/>
+              <circle cx="108" cy="124" r="2" fill="#d4a574"/>
+              <circle cx="140" cy="100" r="2" fill="#d4a574"/>
+            </g>
+
+            <!-- Skeleton gear system (visible mechanism) -->
+            <g class="watch-gear watch-gear-large" style="transform-origin:130px 180px;">
+              <circle cx="130" cy="180" r="36" fill="none" stroke="url(#gearGrad)" stroke-width="2"/>
+              <circle cx="130" cy="180" r="28" fill="none" stroke="url(#gearGrad)" stroke-width="1" stroke-dasharray="2 3"/>
+              <!-- gear teeth -->
+              <g>
+                <rect x="128" y="142" width="4" height="6" fill="url(#gearGrad)"/>
+                <rect x="128" y="212" width="4" height="6" fill="url(#gearGrad)"/>
+                <rect x="92" y="178"  width="6" height="4" fill="url(#gearGrad)"/>
+                <rect x="162" y="178" width="6" height="4" fill="url(#gearGrad)"/>
+                <rect x="106" y="154" width="5" height="5" fill="url(#gearGrad)" transform="rotate(-45 108.5 156.5)"/>
+                <rect x="149" y="154" width="5" height="5" fill="url(#gearGrad)" transform="rotate(45 151.5 156.5)"/>
+                <rect x="106" y="201" width="5" height="5" fill="url(#gearGrad)" transform="rotate(45 108.5 203.5)"/>
+                <rect x="149" y="201" width="5" height="5" fill="url(#gearGrad)" transform="rotate(-45 151.5 203.5)"/>
+              </g>
+              <!-- spokes -->
+              <line x1="130" y1="148" x2="130" y2="212" stroke="url(#gearGrad)" stroke-width="2"/>
+              <line x1="98" y1="180" x2="162" y2="180" stroke="url(#gearGrad)" stroke-width="2"/>
+              <line x1="107" y1="157" x2="153" y2="203" stroke="url(#gearGrad)" stroke-width="1.5"/>
+              <line x1="153" y1="157" x2="107" y2="203" stroke="url(#gearGrad)" stroke-width="1.5"/>
+              <circle cx="130" cy="180" r="6" fill="url(#gearGrad)"/>
+              <circle cx="130" cy="180" r="3" fill="#3b2113"/>
+            </g>
+
+            <g class="watch-gear watch-gear-small" style="transform-origin:228px 180px;">
+              <circle cx="228" cy="180" r="20" fill="none" stroke="url(#gearGrad)" stroke-width="1.5"/>
+              <circle cx="228" cy="180" r="14" fill="none" stroke="url(#gearGrad)" stroke-width="0.8" stroke-dasharray="1 2"/>
+              <rect x="226" y="158" width="3" height="4" fill="url(#gearGrad)"/>
+              <rect x="226" y="198" width="3" height="4" fill="url(#gearGrad)"/>
+              <rect x="208" y="178" width="4" height="3" fill="url(#gearGrad)"/>
+              <rect x="244" y="178" width="4" height="3" fill="url(#gearGrad)"/>
+              <line x1="228" y1="162" x2="228" y2="198" stroke="url(#gearGrad)" stroke-width="1.5"/>
+              <line x1="212" y1="180" x2="244" y2="180" stroke="url(#gearGrad)" stroke-width="1.5"/>
+              <circle cx="228" cy="180" r="4" fill="url(#gearGrad)"/>
+            </g>
+
+            <!-- Small bottom gear -->
+            <g class="watch-gear watch-gear-tiny" style="transform-origin:180px 232px;">
+              <circle cx="180" cy="232" r="12" fill="none" stroke="url(#gearGrad)" stroke-width="1"/>
+              <line x1="180" y1="222" x2="180" y2="242" stroke="url(#gearGrad)" stroke-width="1"/>
+              <line x1="170" y1="232" x2="190" y2="232" stroke="url(#gearGrad)" stroke-width="1"/>
+              <circle cx="180" cy="232" r="2.5" fill="url(#gearGrad)"/>
+            </g>
+
+            <!-- Center pivot -->
+            <circle cx="180" cy="180" r="6" fill="url(#gearGrad)"/>
+            <circle cx="180" cy="180" r="3" fill="#3b2113"/>
+
+            <!-- HANDS (animated by JS) -->
+            <g class="watch-hand watch-hand-hour" style="transform-origin:180px 180px;">
+              <rect x="178" y="118" width="4" height="68" rx="1" fill="#e8c8a0"/>
+              <rect x="179" y="120" width="2" height="60" fill="#7a4729"/>
+            </g>
+            <g class="watch-hand watch-hand-minute" style="transform-origin:180px 180px;">
+              <rect x="178.5" y="92" width="3" height="92" rx="1" fill="#f0d4b0"/>
+              <rect x="179.5" y="94" width="1" height="86" fill="#7a4729"/>
+            </g>
+            <g class="watch-hand watch-hand-second" style="transform-origin:180px 180px;">
+              <rect x="179.4" y="100" width="1.2" height="105" fill="#d4a574"/>
+              <circle cx="180" cy="180" r="3" fill="#d4a574"/>
+              <rect x="179.4" y="180" width="1.2" height="22" fill="#d4a574"/>
+            </g>
+
+            <!-- Glass reflection -->
+            <ellipse cx="156" cy="148" rx="40" ry="28" fill="url(#reflGrad)" class="watch-shine"/>
+
+            <!-- Outer ring highlight -->
+            <circle cx="180" cy="180" r="119" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
+          </svg>
+
+          <!-- Floating shine glow behind watch -->
+          <span class="watch-glow"></span>
+        </div>
+
+        <!-- Right side: perfume bottle (floating object) -->
+        <div class="perfume" data-parallax="14">
+          <svg viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="bottleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#1a1a1a"/>
+                <stop offset="20%" stop-color="#2a2a2a"/>
+                <stop offset="50%" stop-color="#0a0a0a"/>
+                <stop offset="80%" stop-color="#1a1a1a"/>
+                <stop offset="100%" stop-color="#000000"/>
+              </linearGradient>
+              <linearGradient id="capGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#c98a5e"/>
+                <stop offset="50%" stop-color="#7a4729"/>
+                <stop offset="100%" stop-color="#3b2113"/>
+              </linearGradient>
+              <linearGradient id="capRing" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#f4c79f"/>
+                <stop offset="50%" stop-color="#a26343"/>
+                <stop offset="100%" stop-color="#5d3522"/>
+              </linearGradient>
+            </defs>
+            <!-- Cap -->
+            <path d="M 70 10 L 130 10 L 132 50 Q 132 60 122 60 L 78 60 Q 68 60 68 50 Z" fill="url(#capGrad)"/>
+            <rect x="68" y="55" width="64" height="8" fill="url(#capRing)"/>
+            <rect x="68" y="63" width="64" height="3" fill="#3b2113"/>
+            <!-- Neck -->
+            <rect x="86" y="66" width="28" height="14" fill="url(#bottleGrad)"/>
+            <!-- Body -->
+            <path d="M 50 80 L 150 80 Q 162 80 162 95 L 162 250 Q 162 268 145 268 L 55 268 Q 38 268 38 250 L 38 95 Q 38 80 50 80 Z" fill="url(#bottleGrad)"/>
+            <!-- Label area -->
+            <rect x="75" y="160" width="50" height="40" fill="rgba(255,255,255,0.04)" rx="3"/>
+            <text x="100" y="185" text-anchor="middle" font-family="Instrument Serif" font-style="italic" font-size="16" fill="rgba(255,255,255,0.6)">Origin</text>
+            <!-- Highlight reflection -->
+            <ellipse cx="62" cy="130" rx="6" ry="50" fill="rgba(255,255,255,0.15)"/>
+          </svg>
+        </div>
+
+        <div class="st-3d-text">
+          <h3>
+            <em>You just</em><br/>
+            <span>imagine</span>
+          </h3>
+          <p>Cars flying, magical &amp; unique creatures, or products interacting in any impossible situations…</p>
+          <span class="st-3d-arrow" aria-hidden="true">
+            <svg viewBox="0 0 80 80">
+              <path d="M 5 75 Q 30 50 50 35 Q 65 25 75 30" stroke="#ff4530" stroke-width="2" fill="none" stroke-linecap="round"/>
+            </svg>
+            <i class="st-3d-arrow-dot"></i>
+          </span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ░░░ READY TO EXPLORE feature row ░░░ -->
+    <section class="st-explore">
+      <div class="explore-grid">
+
+        <!-- Left: feature list -->
+        <ul class="explore-features">
+          <li>
+            <span class="ef-icon ef-icon-yellow">
+              <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" fill="currentColor"/></svg>
+            </span>
+            <div>
+              <h4>Captivate your audience</h4>
+              <p>Create stunning visuals &amp; impossible scenarios, leaving a lasting impression.</p>
+            </div>
+          </li>
+          <li>
+            <span class="ef-icon ef-icon-blue">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="currentColor"/></svg>
+            </span>
+            <div>
+              <h4>Boost creativity</h4>
+              <p>Break free from limitations, tell unique stories, &amp; showcase products in new ways.</p>
+            </div>
+          </li>
+          <li>
+            <span class="ef-icon ef-icon-green">
+              <svg viewBox="0 0 24 24"><polygon points="12,2 22,21 2,21" fill="currentColor"/></svg>
+            </span>
+            <div>
+              <h4>Increase engagement</h4>
+              <p>Drive viewer connection through immersive, story-led experiences.</p>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Right: Ready to explore card -->
+        <div class="explore-cta">
+          <h3>
+            Ready to<br/>
+            <span>explore <span class="explore-q">?</span></span>
+          </h3>
+          <div class="explore-shapes">
+            <span class="es es-square"></span>
+            <span class="es-line"></span>
+            <span class="es es-cube"></span>
+          </div>
+          <a href="https://wa.me/919574959292" class="explore-btn" data-magnetic data-cursor="link">
+            <span>WhatsApp</span><i>↗</i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ░░░ 100M REACH banner ░░░ -->
+    <section class="st-reach">
+      <div class="reach-inner">
+        <span class="reach-num">100M<sup>+</sup></span>
+        <span class="reach-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><polyline points="3,17 9,11 13,15 21,7" stroke="#7fdb9b" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><polyline points="14,7 21,7 21,14" stroke="#7fdb9b" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="reach-label">Organic Reach in CGI</span>
+      </div>
+    </section>
+
+
+    <!-- ░░░ CGI REELS (4 vertical Instagram-style) ░░░ -->
+    <section class="st-reels">
+      <div class="reels-grid">
+        <a class="reel" href="#" data-cursor="play">
+          <div class="reel-img" data-bg="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&q=75&fm=webp&auto=format"></div>
+          <button class="reel-play" aria-label="Play">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+          </button>
+          <span class="reel-dot reel-dot-yellow"></span>
+        </a>
+        <a class="reel" href="#" data-cursor="play">
+          <div class="reel-img" data-bg="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&q=75&fm=webp&auto=format"></div>
+          <button class="reel-play" aria-label="Play">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+          </button>
+          <span class="reel-dot reel-dot-green"></span>
+        </a>
+        <a class="reel" href="#" data-cursor="play">
+          <div class="reel-img" data-bg="https://images.unsplash.com/photo-1551529834-525807d6b4f3?w=600&q=75&fm=webp&auto=format"></div>
+          <button class="reel-play" aria-label="Play">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+          </button>
+          <span class="reel-dot reel-dot-red"></span>
+        </a>
+        <a class="reel" href="#" data-cursor="play">
+          <div class="reel-img" data-bg="https://images.unsplash.com/photo-1542838132-92c53300491e?w=600&q=75&fm=webp&auto=format"></div>
+          <button class="reel-play" aria-label="Play">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+          </button>
+          <span class="reel-dot reel-dot-blue"></span>
+        </a>
+      </div>
+    </section>
+
+
+    <!-- ░░░ QUICK CONTENT — 4 CGI tiles ░░░ -->
+    <section class="st-quick">
+      <div class="quick-grid">
+        <a class="quick-card" href="#" data-cursor="view">
+          <div class="quick-img" data-bg="https://images.unsplash.com/photo-1592595896616-c37162298647?w=900&q=75&fm=webp&auto=format"></div>
+        </a>
+        <a class="quick-card" href="#" data-cursor="view">
+          <div class="quick-img" data-bg="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=900&q=75&fm=webp&auto=format"></div>
+        </a>
+        <a class="quick-card" href="#" data-cursor="view">
+          <div class="quick-img" data-bg="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=900&q=75&fm=webp&auto=format"></div>
+        </a>
+        <a class="quick-card" href="#" data-cursor="view">
+          <div class="quick-img" data-bg="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?w=900&q=75&fm=webp&auto=format"></div>
+        </a>
+      </div>
+
+      <h2 class="quick-title">Quick Content</h2>
+
+      <div class="quick-grid">
+        <a class="quick-card" href="#" data-cursor="view">
+          <div class="quick-img" data-bg="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=900&q=75&fm=webp&auto=format"></div>
+        </a>
+        <a class="quick-card" href="#" data-cursor="view">
+          <div class="quick-img" data-bg="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=900&q=75&fm=webp&auto=format"></div>
+        </a>
+        <a class="quick-card" href="#" data-cursor="view">
+          <div class="quick-img" data-bg="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=900&q=75&fm=webp&auto=format"></div>
+        </a>
+        <a class="quick-card" href="#" data-cursor="view">
+          <div class="quick-img" data-bg="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=900&q=75&fm=webp&auto=format"></div>
+        </a>
+      </div>
+    </section>
+
+
+    <!-- ░░░ CTA ░░░ -->
+    <section class="cta" id="contact">
+      <span class="cta-orb cta-orb-l" aria-hidden="true"></span>
+      <span class="cta-orb cta-orb-r" aria-hidden="true"></span>
+
+      <div class="cta-inner">
+        <h2 class="cta-title">
+          <span class="mask"><span class="word">Call us for a</span></span>
+          <span class="mask"><span class="word"><em>pitch?</em></span></span>
+        </h2>
+
+        <a href="mailto:hello@pixelnest.studio" class="cta-btn" data-magnetic data-cursor="link">
+          <span><span>Contact Us</span><i>↗</i></span>
+        </a>
+
+        <div class="cta-foot">
+          <a href="index.html">Home ↗</a>
+          <a href="work.html">Work ↗</a>
+          <a href="index.html#awards">Awards ↗</a>
+          <a href="tel:+919574959292">+91 95749 59292 ↗</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer class="foot">
+    <div class="foot-top">
+      <a href="index.html" class="foot-logo">
+        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="14" cy="32" r="6" fill="#2547ff"/>
+          <rect x="26" y="14" width="12" height="12" fill="#ffffff"/>
+          <polygon points="46,46 58,46 52,34" fill="#d9ff00"/>
+          <circle cx="42" cy="20" r="3" fill="#ff4530"/>
+        </svg>
+        <span><em>Pixel</em>Nest</span>
+      </a>
+      <div class="foot-meta">
+        <p>Titanium Business Park, 5th Floor, Makarba,<br/>Sarkhej, Ahmedabad — 380051 (Gujarat)</p>
+        <p><a href="tel:+919574959292">+91 95749 59292</a></p>
+      </div>
+      <div class="foot-social">
+        <a href="#">Instagram ↗</a>
+        <a href="#">LinkedIn ↗</a>
+        <a href="#">Behance ↗</a>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 PixelNest Ad Branding</span>
+      <span>Made with passion in Ahmedabad.</span>
+    </div>
+  </footer>
+
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script defer src="script.js"></script>
+  <script defer src="studio.js"></script>
+</body>
+</html>

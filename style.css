@@ -992,3 +992,25 @@ body.is-loaded .loader { pointer-events: none; }
   0%   { background-position: 200% 0; }
   100% { background-position: -200% 0; }
 }
+
+/* ════════ GLOBAL: reduced-motion accessibility ════════ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Mobile: simpler hero glow on small screens */
+@media (max-width: 700px) {
+  .hero-glow-1, .hero-glow-2 { filter: blur(50px); opacity: 0.5; }
+  /* Disable expensive backdrop-filter on slow devices */
+  .nav-inner { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+}
+
+/* Mobile: pause kinetic word cycler if user has data-saver */
+@media (prefers-reduced-data: reduce) {
+  .grain { display: none; }
+}
